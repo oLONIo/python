@@ -8,7 +8,6 @@ class Car:
         self.is_police = is_police
 
     def go(self):
-        self.speed = speed
         return f'{self.name} поехала!'
     
     def stop(self):
@@ -46,10 +45,13 @@ class SportCar(Car):
 class WorkCar(Car):
 
     def show_speed(self):
-        print(f'Скорость рабочей машины - {self.speed} км/ч.')
-
         if self.speed > 60:
-            print(f'Скорость {self.name} выше положенной!!!')
+            return f'Скорость {self.name} выше положенной!!!'
+
+        else:
+            return f'Скорость рабочей машины - {self.speed} км/ч.'
+
+        
 
 class PoliceCar(Car):
 
@@ -70,7 +72,7 @@ regera = SportCar(210, 'Серый', 'regera', False)
 cherry = TownCar(30, 'Красный', 'cherry', False)
 lastochka = WorkCar(144, 'Черный', 'lastochka', True)
 mersedes = PoliceCar(347, 'Синий',  'mersedes', True)
-print(f'{lastochka.go()} со скоростью {lastochka.show_speed()}')
+print(f'{lastochka.go()} и {lastochka.show_speed()}')
 print(f'Вдруг {cherry.turn(r)} и подрезала машину, поэтому {regera.stop()}')
 print(lastochka.turn(l))
 print(f'Цвет {lastochka.name} - {lastochka.color}')
@@ -80,10 +82,3 @@ print(regera.show_speed())
 print(cherry.show_speed())
 print(mersedes.police())
 print(mersedes.show_speed())
-###################################################################################################
-#Не понимаю почему в 4 задании без значения в скобках не работает 73 строчка кода lastochka.go(144)
-#И выводит в консоль зачем-то целый класс WorkerCar и все команды,
-#которые там написаны вместо одной lastochka.go()
-###################################################################################################
-
-
