@@ -2,12 +2,12 @@ class Car:
 
     def __init__(self, speed, color, name, is_police):
 
-        self.speed = float(speed)
+        self.speed = speed
         self.color = color
         self.name = name
         self.is_police = is_police
 
-    def go(self, speed):
+    def go(self):
         self.speed = speed
         return f'{self.name} поехала!'
     
@@ -70,7 +70,7 @@ regera = SportCar(210, 'Серый', 'regera', False)
 cherry = TownCar(30, 'Красный', 'cherry', False)
 lastochka = WorkCar(144, 'Черный', 'lastochka', True)
 mersedes = PoliceCar(347, 'Синий',  'mersedes', True)
-print(f'{lastochka.go(144)} со скоростью {lastochka.show_speed()}')
+print(f'{lastochka.go()} со скоростью {lastochka.show_speed()}')
 print(f'Вдруг {cherry.turn(r)} и подрезала машину, поэтому {regera.stop()}')
 print(lastochka.turn(l))
 print(f'Цвет {lastochka.name} - {lastochka.color}')
