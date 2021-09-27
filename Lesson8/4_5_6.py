@@ -7,7 +7,7 @@ class MachinesStore:
         self.numb = number_of_lists
         self.full = []
         self.store = []
-        self.test = {'Модель устройства': self.name, 'Цена за ед': self.price, 'Количество': self.quantity}
+        self.test_u = {'Модель устройства': self.name, 'Цена за ед': self.price, 'Количество': self.quantity}
 
     def __str__(self):
         return f'Цена за 1 шт. устройства "{self.name}": {self.price}руб.\nВсего на складе: {self.quantity}'
@@ -18,8 +18,9 @@ class MachinesStore:
             test = input(f'Название устройства: ')
             test_p = int(input(f'Введите цену за шт: '))
             test_q = int(input(f'Количество: '))
-            self.test = {'Модель устройства': test, 'Цена за ед': float(test_p), 'Количество': int(test_q)}
-            self.store.append(self.test)
+            test_u1 = {'Модель устройства': test, 'Цена за ед': test_p, 'Количество': test_q}
+            self.test_u.update(test_u1)
+            self.store.append(self.test_u)
             print(f'Текущий список: {self.store}')
         except:
             return f'Странные данные!'
