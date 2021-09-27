@@ -20,7 +20,7 @@ class OnlyInt:
                 if (yn) == 'Y' or yn == 'y':
                     print(test.inpt())
                 elif yn == 'N' or yn == 'n':
-                    print('Выход')
+                    print('Выход!')
                     exit()
 
 test = OnlyInt()
